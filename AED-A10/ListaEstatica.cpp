@@ -45,20 +45,19 @@ void mostrar(){
 }
 
 void inserirValorPos(int posicao, int valorInserir){
-	
-	int aux;
-	
 	if(isFull()){
 		printf("\nLista cheia, impossivel inserir");
+		return;
 	}
 	if(posicao < 0 || posicao > qtd){
 		printf("\nPosicao invalida");
+		return;
 	}
-	for(int i = qtd; i > pos; i--){
-		lista[i] = lista[i - 1];
+	for(int i = qtd; i > posicao; i--){
+		list[i] = list[i - 1];
 	}
-	lista[pos]= valor;
-	printf("\nValor %d inserido.", lista[pos]);
+	list[posicao] = valorInserir;
+	printf("\nValor %d inserido.", list[posicao]);
 	qtd++;
 }
 
